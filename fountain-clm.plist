@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BBEditDocumentType</key>
+	<string>CodelessLanguageModule</string>
+	<key>BBLMLanguageDisplayName</key>
+	<string>Fountain</string>
+	<key>BBLMLanguageCode</key>
+	<string>fntn</string>
+	<key>BBLMSuffixMap</key>
+	<array>
+		<dict>
+			<key>BBLMLanguageSuffix</key>
+			<string>.fountain</string>
+			<key>BBLMLanguageSuffix</key>
+			<string>.spmd</string>
+		</dict>
+	</array>
+	<key>BBLMCanSpellCheckCodeRuns</key>
+	<true/>
+	<key>BBLMScansFunctions</key>
+	<true/>
+	<key>BBLMFunctionScannerDoesFoldsToo</key>
+	<true/>
+	<key>BBLMIsCaseSensitive</key>
+	<false/>
+	<key>BBLMColorsSyntax</key>
+	<true/>
+	<key>BBLMKeywordList</key>
+	<array>
+		<string>CUT TO</string>
+		<string>TO</string>
+		<string>FADE TO BLACK</string>
+		<string>FADE OUT</string>
+		<string>CUT TO BLACK</string>
+		<string>INT</string>
+		<string>EXT</string>
+		<string>EST</string>
+		<string>I/E</string>
+	</array>
+	<key>BBLMPredefinedNameList</key>
+	<array>
+		<string>TITLE</string>
+		<string>CREDIT</string>
+		<string>AUTHOR</string>
+		<string>SOURCE</string>
+		<string>DRAFT</string>
+		<string>DRAFT DATE</string>
+		<string>DATE</string>
+		<string>CONTACT</string>
+		<string>COPYRIGHT</string>
+		<string>NOTES</string>
+		<string>EDITOR</string>
+	</array>
+	<key>BBLMCommentLineDefault</key>
+	<string>\#</string>
+	<key>BBLMCommentPrefixDefault</key>
+	<string>/*</string>
+	<key>BBLMCommentSuffixDefault</key>
+	<string>*/</string>
+	<key>Language Features</key>
+	<dict>
+		<key>Identifier and Keyword Character Class</key>
+		<string>A-Za-z\ 0-9_-</string>
+		<key>Comment Pattern</key>
+		<string>
+			<![CDATA[
+			(?x-i:
+				(?s:/\*.*?\*/)
+			|	(?s:\[\[.*?\]\])
+			|	^\#.*$
+			|	^\=.*$
+			)
+			]]>
+		</string>
+		<key>String Pattern</key>
+		<string>
+			<![CDATA[
+			(?x-i:
+				(?<!\\)\*+_*(?<!\\)\**[^<>\n\r]+?(?<!\\|\ )\**_*(?<!\\|\ )\*+
+			|	_+(?<!\\)\**_*[^<>]+?_*(?<!\\|\ )\**_+
+			|	^\>.*?\<$
+			|	^(?<=^\r)(\t|\ )*?[A-Z ]+?[A-Z0-9-\'\"\$\#\ \(\)\,\.\^\/\\\*\&\@\?\!\=\+\%]*?(\t|\ )*(?!\r\s*?\r)$
+			)
+			]]>
+		</string>
+		<key>Function Pattern</key>
+		<string>
+			<![CDATA[
+			(?x-i:
+				(?P<function>^(\.*)
+				(?P<function_name>(?(?<=(\.))[A-Za-z0-9-\ \'\"]+$
+				|	([iI][nN][tT]\.*
+				|	[eE][xX][tT]\.*
+				|	\#+\ )
+					.*$)
+				))
+			)
+			]]>
+		</string>
+	</dict>
+</dict>
+</plist>
