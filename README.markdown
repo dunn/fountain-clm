@@ -12,6 +12,8 @@ Nima Yousefi's [regular expressions for Fountain](https://github.com/nyousefi/Fo
 
 - _Scene Navigation:_ Scene headings and sections are tracked and collected in the function pull-down menu of the navigation bar.
 
+- _Scene and Section Folding:_ Scenes and sections can be collapsed to save screen space.
+
 ## Installation
 
 If you're using TextWrangler, move `fountain-clm.plist` to `~/Library/Application Support/TextWrangler/Language Modules/`
